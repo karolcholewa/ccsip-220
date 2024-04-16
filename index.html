@@ -63,7 +63,7 @@ SET clientSecret = 'mysecretkey'
     Platform.Load("Core","1");
     var clientId = Variable.GetValue("@clientId");
     var clientSecret = Variable.GetValue("@clientSecret");
-    var writeContent = Platform.Response.Write("Client ID: " + clientId + "<br>Client Secret: " + clientSecret);
+    Write("Client ID: " + clientId + "<br>Client Secret: " + clientSecret);
     </script>
     <header>
         <h1>Welcome to Our Newsletter (dev branch)</h1>
