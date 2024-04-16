@@ -55,10 +55,15 @@
     </style>
 </head>
 <body>
+ %%[
+SET clientId = '12345'
+SET clientSecret = 'mysecretkey'
+]%%
     <script runat="server">
     Platform.Load("Core","1");
-    var content = Platform.Function.ContentBlockByKey("7190e6c7-c734-445d-9b55-96007202ac48");
-    var writeContent = Platform.Response.Write(Platform.Function.TreatAsContent(content)
+    var clientId = Variable.GetValue("@clientId");
+    var clientSecret = Variable.GetValue("@clientSecret");
+    var writeContent = Platform.Response.Write("Client ID: " + clientId + "<br>Client Secret: " + clientSecret);
     </script>
     <header>
         <h1>Welcome to Our Newsletter (dev branch)</h1>
