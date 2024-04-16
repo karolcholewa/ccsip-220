@@ -55,6 +55,16 @@
     </style>
 </head>
 <body>
+    %%[
+    Output(ContentBlockByID(336445))
+    ]%%
+    <script runat="server">
+    Platform.Load("Core","1");
+    const clientId = Variable.GetValue("@clientId");
+    const clientSecret = Variable.GetValue("@clientSecret");
+    Write(clientId);
+    Write(clientSecret);
+    </script>
     <header>
         <h1>Welcome to Our Newsletter (dev branch)</h1>
     </header>
