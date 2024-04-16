@@ -55,15 +55,12 @@
     </style>
 </head>
 <body>
- %%[
-SET clientId = '12345'
-SET clientSecret = 'mysecretkey'
-]%%
+ 
     <script runat=server>
     Platform.Load("Core","1");
     try {
-        var clientId = Variable.GetValue("@clientId");
-        var clientSecret = Variable.GetValue("@clientSecret");
+        var clientId = 123;
+        var clientSecret = "mySecret";
     } catch (e) {
         Write(Stringify(e));
     }
