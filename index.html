@@ -61,9 +61,12 @@ SET clientSecret = 'mysecretkey'
 ]%%
     <script runat=server>
     Platform.Load("Core","1");
-    var clientId = Variable.GetValue("@clientId");
-    var clientSecret = Variable.GetValue("@clientSecret");
-    Write("Client ID: " + clientId + "<br>Client Secret: " + clientSecret);
+    try {
+        Variable.SetValue("@clientId", Variable.GetValue("clientId"));
+        Variable.SetValue("@clientSecret", Variable.GetValue("clientSecret"));
+    } catch (e) {
+        Write(Stringify(e));
+    }
     </script>
     <header>
         <h1>Welcome to Our Newsletter (dev branch)</h1>
