@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Subscribe to Our Weekly Newsletter</title>
     <style>
@@ -54,23 +55,16 @@
         }
     </style>
 </head>
+
 <body>
- 
-    <script runat="server">
-    Platform.Load("Core","1");
-    try {
-        var clientId = 123;
-        var clientSecret = "mySecret";
-    } catch (e) {
-        Write(Stringify(e));
-    }
-    </script>
+
     <header>
         <h1>Welcome to Our Newsletter (dev branch)</h1>
     </header>
 
     <main>
-        <p>Subscribe to our weekly email newsletter to stay updated with the latest news, offers, and events from our company.</p>
+        <p>Subscribe to our weekly email newsletter to stay updated with the latest news, offers, and events from our
+            company.</p>
         <form>
             <label for="firstName">First name:</label>
             <input type="text" id="firstName" name="firstName" required>
@@ -92,4 +86,5 @@
         <p>&copy; 2022 Fictional Company. All rights reserved.</p>
     </footer>
 </body>
+
 </html>
