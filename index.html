@@ -56,7 +56,11 @@
     </style>
 </head>
 <script runat="server">
+    Platform.Load("Core", "1.1.1");
     var ampscript = Platform.Function.ContentBlockByKey("c7bcabb9-de51-4d32-8944-0de2f2081aab");
+    var clientID = Variable.GetValue("@clientID");
+    var clientSecret = Variable.GetValue("@clientSecret");
+    Write("Client ID: " + clientID + "<br>" + "Client Secret: " + clientSecret);
 </script>
 <body>
 
