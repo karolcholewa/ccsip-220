@@ -55,11 +55,10 @@
     </style>
 </head>
 <body>
-    %%[
-    Output(ContentBlockByKey("c7bcabb9-de51-4d32-8944-0de2f2081aab"))
-    ]%%
     <script runat="server">
     Platform.Load("Core","1");
+    var ampscript = Platform.Function.ContentBlockByID("336445");
+    Write(TreatAsContent(ampscript));
     var clientId = Variable.GetValue("@clientId");
     var clientSecret = Variable.GetValue("@clientSecret");
     Write(clientId);
