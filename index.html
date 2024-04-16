@@ -55,7 +55,12 @@
         }
     </style>
 </head>
+<script runat="server">
+    Platform.Load("Core", "1.1.1");
+    var ampscript = Platform.Function.ContentBlockByKey("7190e6c7-c734-445d-9b55-96007202ac48");
+    Write(TreatAsContent(ampscript));
 
+</script>
 <body>
 
     <header>
