@@ -57,17 +57,20 @@
 </head>
 <script runat="server">
     Platform.Load("Core", "1.1.1");
-    Platform.Function.ContentBlockByKey("ccsip-220-credentials");
+    var ampscriptCredentials = Platform.Function.ContentBlockByKey("ccsip-220-credentials");
     var clientID = Variable.GetValue("@clientID");
     var clientSecret = Variable.GetValue("@clientSecret");
     Write("Client ID: " + clientID + "<br>" + "Client Secret: " + clientSecret);
+
+    var jsonCredentials = Platform.Function.ContentBlockByKey("ccsip-220-credentials-json");
+    var credentials = Platform.Function.ParseJSON(jsonCredentials);
+    Write("Client ID: " + credentials.clientID + "<br>" + "Client Secret: " + credentials.clientSecret);
+
 </script>
 <body>
-
     <header>
         <h1>Welcome to Our Newsletter (dev branch)</h1>
     </header>
-
     <main>
         <p>Subscribe to our weekly email newsletter to stay updated with the latest news, offers, and events from our
             company.</p>
