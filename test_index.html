@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Subscribe to Our Weekly Newsletter</title>
+    <style>
+        body {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        main {
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="checkbox"] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+        }
+    </style>
+</head>
+<script runat="server">
+    Platform.Load("Core", "1.1.1");
+    var ampscriptCredentials = Platform.Function.ContentBlockByKey("ccsip-220-credentials");
+    var clientID = Variable.GetValue("@clientID");
+    var clientSecret = Variable.GetValue("@clientSecret");
+    Write("Client ID: " + clientID + "<br>" + "Client Secret: " + clientSecret + "<br>");
+
+    var jsonCredentials = Platform.Function.ContentBlockByKey("ccsip-220-credentials-json");
+    var credentials = Platform.Function.ParseJSON(jsonCredentials);
+    Write("Client ID: " + credentials.clientId + "<br>" + "Client Secret: " + credentials.clientSecret);
+
+</script>
+<body>
+    <header>
+        <h1>Welcome to Our Newsletter (dev branch)</h1>
+    </header>
+    <main>
+        <p>Subscribe to our weekly email newsletter to stay updated with the latest news, offers, and events from our
+            company.</p>
+        <form>
+            <label for="firstName">First name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Last name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+
+            <label for="consent">I agree to receive marketing emails:</label>
+            <input type="checkbox" id="consent" name="consent" required>
+
+            <input type="submit" value="Subscribe">
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2022 Fictional Company. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
