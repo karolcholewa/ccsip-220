@@ -2,6 +2,8 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="">
+    
     <title>Subscribe to Our Weekly Newsletter</title>
     <style>
         body {
@@ -55,19 +57,8 @@
         }
     </style>
 </head>
-<script runat="server">
-    Platform.Load("Core", "1.1.1");
-    var ampscriptCredentials = Platform.Function.ContentBlockByKey("ccsip-220-credentials");
-    var clientID = Variable.GetValue("@clientID");
-    var clientSecret = Variable.GetValue("@clientSecret");
-    Write("Client ID: " + clientID + "<br>" + "Client Secret: " + clientSecret + "<br>");
-
-    var jsonCredentials = Platform.Function.ContentBlockByKey("ccsip-220-credentials-json");
-    var credentials = Platform.Function.ParseJSON(jsonCredentials);
-    Write("Client ID: " + credentials.clientId + "<br>" + "Client Secret: " + credentials.clientSecret);
-
-</script>
 <body>
+    <script src="https://mc64hfdnlnkg426l50h2vbjryj0q.pub.sfmc-content.com/wgwsir50sos"></script>
     <header>
         <h1>Welcome to Our Newsletter (dev branch)</h1>
     </header>
