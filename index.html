@@ -4,7 +4,7 @@ IF RequestParameter("submitted") == true THEN
 
   VAT @createContact
   SET @createContact = CreateSalesforceObject(
-        "Contact",
+        "Lead",
         3,
         "FirstName", RequestParameter("firstname"),
         "LastName", RequestParameter("lastname"),
