@@ -3,7 +3,6 @@ body {
     margin: 0 auto;
     padding: 20px;
     font-family: Arial, sans-serif;
-    color: #ff0000;
 }
 
 header {
@@ -47,4 +46,11 @@ input[type="submit"] {
 
 footer {
     text-align: center;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 0;
+    text-align: center;
+    color:#ff0000;
 }
