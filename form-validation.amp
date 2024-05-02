@@ -1,0 +1,29 @@
+<!-- Method 1 -->
+%%[
+SET @Submit = RequestParameter("Submit")
+IF @Submit != "Success" THEN
+]%%
+
+<!-- Place the form here-->
+
+%%[ ENDIF ]%%
+
+<!-- Method 2 -->
+%%[
+var @result, @firstName, @email
+
+set @firstName = RequestParameter('firstName')
+set @email = RequestParameter('email')
+
+if not empty(@firstName) and not empty(@email) then
+  set @result = CreateSalesforceObject('Contact', 2, 'FirstName', @firstName, 'Email', @email)
+endif
+]%%
+
+<!-- Place the form here-->
+
+%%[ if not empty(@result) then ]%%
+        <p>Thank you for subscribing!</p>
+        %%[ endif ]%%
+
+
